@@ -2,6 +2,8 @@
 
 import { useState } from 'react'
 import { Document, Page, pdfjs } from 'react-pdf'
+import 'react-pdf/dist/Page/AnnotationLayer.css'
+import 'react-pdf/dist/Page/TextLayer.css'
 import '../styles/pdf-viewer.css'
 
 // Fallback iframe viewer when react-pdf fails
