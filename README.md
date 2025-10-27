@@ -1,36 +1,100 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🗂️ Filyx.ai - AI-Powered Document Management Platform
 
-## Getting Started
+An intelligent document organization and classification platform built with Next.js, featuring AI-powered categorization, advanced search capabilities, and comprehensive document analytics.
 
-First, run the development server:
+## ✨ Features
+
+- **🤖 AI Document Classification** - Automatically categorize documents using OpenAI
+- **🔍 Intelligent Search** - Full-text search with natural language capabilities  
+- **� Enhanced PDF Viewer** - Interactive PDF preview with precise text selection
+- **�📊 Analytics Dashboard** - Comprehensive document insights and metrics
+- **🏷️ Smart Tagging System** - Custom tags with color coding and organization
+- **📤 Bulk Operations** - Multi-document selection and batch processing
+- **💾 Export Features** - CSV and JSON export for external analysis
+- **🔐 Secure Storage** - Supabase integration with user authentication
+
+## 🚀 Quick Start
 
 ```bash
+# Install dependencies
+npm install
+
+# Set up environment variables
+cp .env.example .env.local
+# Edit .env.local with your API keys
+
+# Run database migrations
+npm run db:migrate
+
+# Seed system categories
+npm run db:seed
+
+# Start development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📚 Documentation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Setup Guides
+- **[Getting Started](docs/getting-started.md)** - Complete setup walkthrough
+- **[Environment Setup](docs/setup/environment-setup.md)** - Configure API keys and database
+- **[Supabase Setup](docs/setup/supabase-setup.md)** - Authentication and storage configuration
+- **[Fix Storage RLS](docs/setup/fix-storage-rls.md)** - Troubleshoot upload permissions
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Implementation Details
+- **[Bulk Operations](docs/implementation/bulk-operations.md)** - Multi-document management
+- **[Export Features](docs/implementation/export-implementation.md)** - Data export capabilities
+- **[Search System](docs/implementation/search-implementation.md)** - Full-text search implementation
+- **[PDF Viewer Enhancement](PDF-VIEWER-IMPLEMENTATION.md)** - Advanced PDF preview with precise text selection
 
-## Learn More
+### Planning & Architecture
+- **[Development Roadmap](docs/planning/roadmap.md)** - 6-week development plan
+- **[System Architecture](docs/planning/system_architecture.md)** - Technical architecture
+- **[UI Wireframes](docs/planning/wireframe.md)** - Interface mockups
 
-To learn more about Next.js, take a look at the following resources:
+## 🛠️ Technology Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Frontend**: Next.js 16, React 19, TypeScript, Tailwind CSS
+- **Backend**: Next.js API Routes, Drizzle ORM
+- **Database**: PostgreSQL with Supabase
+- **AI Integration**: OpenAI GPT-4 for document classification
+- **Storage**: Supabase Storage for file management
+- **Authentication**: Supabase Auth
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🏗️ Project Structure
 
-## Deploy on Vercel
+```
+src/
+├── app/                 # Next.js App Router
+│   ├── api/            # API endpoints
+│   ├── dashboard/      # Main dashboard
+│   ├── upload/         # Document upload
+│   └── search/         # Search interface
+├── components/         # React components
+├── lib/               # Database & utilities
+└── types/             # TypeScript definitions
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📊 Current Status
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+✅ **Complete Features:**
+- Document upload and processing
+- AI-powered classification  
+- Enhanced PDF viewer with precise text selection
+- Analytics dashboard
+- Search functionality
+- Bulk operations
+- Tag management
+- Export capabilities
+
+⚠️ **Setup Required:**
+- Environment configuration
+- Supabase RLS policies
+
+## 🤝 Contributing
+
+This is a private project. For questions or issues, please refer to the documentation in the `docs/` directory.
+
+## 📄 License
+
+Private project - All rights reserved.
