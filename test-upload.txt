@@ -1,0 +1,9 @@
+Test document content for automatic processing test.
+This is a simple text file to verify the upload and processing workflow.
+
+Key information:
+- Test document
+- Upload date: October 26, 2025
+- Purpose: Verify automatic Docling processing
+
+This content should be automatically extracted and made searchable.

@@ -1,0 +1,54 @@
+architecture-beta
+    group ui[User Interface]
+    group foundation[Template Foundation] 
+    group extensions[Document Extensions]
+    group data[Data Layer]
+    group storage[Storage Layer]
+    group external[External Services]
+    
+    service webapp(server)[Web App] in ui
+    service mobile(internet)[Mobile Web] in ui
+    
+    service auth(database)[Auth] in foundation
+    service api(server)[API Routes] in foundation
+    service billing(server)[Billing] in foundation
+    
+    service processor(cloud)[Doc Processor] in extensions
+    service classifier(cloud)[AI Classifier] in extensions
+    service vectorsvc(cloud)[Vector Search] in extensions
+    service ragengine(cloud)[RAG Engine] in extensions
+    
+    service postgres(database)[PostgreSQL] in data
+    service vectors(database)[pgvector] in data
+    
+    service docstorage(disk)[Doc Storage] in storage
+    service cache(disk)[Cache] in storage
+    
+    service openai(internet)[OpenAI] in external
+    service anthropic(internet)[Claude] in external
+    service stripeapi(internet)[Stripe] in external
+    
+    webapp:B -- T:auth
+    webapp:B -- T:api
+    webapp:R -- L:processor
+    webapp:B -- T:vectorsvc
+    webapp:B -- T:ragengine
+    
+    processor:B -- T:classifier
+    processor:B -- T:docstorage
+    processor:R -- L:openai
+    
+    classifier:R -- L:openai
+    classifier:R -- L:anthropic
+    classifier:B -- T:postgres
+    
+    vectorsvc:B -- T:vectors
+    vectorsvc:R -- L:openai
+    
+    ragengine:B -- T:postgres
+    ragengine:B -- T:vectors
+    ragengine:R -- L:openai
+    
+    auth:B -- T:postgres
+    api:B -- T:postgres
+    billing:R -- L:stripeapi
